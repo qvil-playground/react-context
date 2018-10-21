@@ -4,8 +4,12 @@ import { Div1 } from "./components";
 
 class App extends Component {
   state = {
-    text: "Hello",
-    setText: text => this.setState({ text })
+    text: "Hello World",
+    setText: () =>
+      this.setState({
+        text:
+          this.state.text.indexOf("Hello") !== -1 ? "Hi World" : "Hello World"
+      })
   };
 
   render() {

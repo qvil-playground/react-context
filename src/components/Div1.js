@@ -8,22 +8,14 @@ const Div1 = () => {
       style={{
         margin: 10,
         padding: 10,
-        border: "solid 1px #FC5252"
+        border: "solid 1px #FC5C9C"
       }}
     >
       <Consumer>
         {({ text, setText }) => (
           <div>
-            Div1{" "}
-            <button
-              onClick={() =>
-                setText(
-                  text.indexOf("Hello") !== -1 ? "Hi World" : "Hello World"
-                )
-              }
-            >
-              setText
-            </button>
+            <div>{`Div1 text : ${text} `}</div>
+            <button onClick={setText}>setText</button>
           </div>
         )}
       </Consumer>

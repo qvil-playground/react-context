@@ -4,7 +4,7 @@ import { Consumer } from "../store";
 const Div3 = () => {
   return (
     <Consumer>
-      {({ text }) => {
+      {({ text, setText }) => {
         return (
           <div
             style={{
@@ -13,7 +13,8 @@ const Div3 = () => {
               border: "solid 1px #3E5EB6"
             }}
           >
-            Div3 {`text : ${text}`}
+            <div>Div3 {`text : ${text}`}</div>
+            <button onClick={setText}>setText</button>
           </div>
         );
       }}
