@@ -5,7 +5,17 @@ const Div3 = () => {
   return (
     <Consumer>
       {({ text }) => {
-        return <div>Div3 {`text : ${text}`}</div>;
+        return (
+          <div
+            style={{
+              margin: 10,
+              padding: 10,
+              border: "solid 1px #3E5EB6"
+            }}
+          >
+            Div3 {`text : ${text}`}
+          </div>
+        );
       }}
     </Consumer>
   );
