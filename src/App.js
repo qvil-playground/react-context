@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Provider } from "./store";
 import { Div1 } from "./components";
+import { ThemeProvider } from "./store/ThemeProvider";
 
 class App extends Component {
   state = {
@@ -15,9 +16,17 @@ class App extends Component {
   render() {
     return (
       <Provider value={this.state}>
-        <div>
-          <Div1 />
-        </div>
+        <ThemeProvider>
+          {({ mode, setMode }) => (
+            <div
+              style={{ backgroundColor: mode === "light" ? "white" : "black" }}
+            >
+              {mode}
+              <button onClick={() => setMode(mode)}>{mode} mode</button>
+              <Div1 />
+            </div>
+          )}
+        </ThemeProvider>
       </Provider>
     );
   }
